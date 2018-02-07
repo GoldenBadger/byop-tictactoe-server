@@ -7,9 +7,15 @@
   revision = "e83ac2304db3c50cf03d96a2fcd39009d458bc35"
   version = "v3.3.2"
 
+[[projects]]
+  branch = "master"
+  name = "github.com/jinzhu/copier"
+  packages = ["."]
+  revision = "db4671f3a9b8df855e993f7c94ec5ef1ffb0a23b"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "01430848a41401de26dc03ed542fa18f8e17f59178351b414b30fed1c440aa1b"
+  inputs-digest = "5bc8d96da8eb9eb74d819c13ff7f3b29f725181d072af53822f0d98de7982f82"
   solver-name = "gps-cdcl"
   solver-version = 1
