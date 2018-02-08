@@ -37,11 +37,8 @@ Creates a new game with two players, specified by player ID.
 
 #### Example request
 
-```json
-{
-    "player_x": "<ID of the X player>",
-    "player_o": "<ID of the O player>",
-}
+```
+    player_x=<ID of the X player>&player_o=<ID of the O player>
 ```
 
 #### Example response
@@ -54,7 +51,7 @@ Creates a new game with two players, specified by player ID.
 
 ## GET /games/:id
 
-Returns information on the game with the given ID. Returns 404 if no such game exists.
+Returns information on the game with the given ID.
 
 Possible statuses are:
 
@@ -81,16 +78,10 @@ Possible statuses are:
 Plays a move. A move is a single number representing the index on the board to
 make the move. The board begins at index 0.
 
-Returns 400 if that board position is already occupied. Returns 404 if no such
-game exists.
-
 #### Example request
 
-```json
-{
-    "player": "<ID of player making the move>",
-    "move": 1,
-}
+```
+    player=<ID of player making the move>&move=1
 ```
 
 ## POST /players
