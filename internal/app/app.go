@@ -22,7 +22,7 @@ func (a *App) Run() {
 	a.initPlayers()
 	a.initRouter()
 
-	http.ListenAndServe(":8080", a.router)
+	http.ListenAndServe(":8000", a.router)
 }
 
 func (a *App) initPlayers() {
