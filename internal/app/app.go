@@ -167,7 +167,7 @@ func flattenBoard(board [3][3]byte) string {
 	var ret [9]byte
 	for col := 0; col < 3; col++ {
 		for row := 0; row < 3; row++ {
-			ret[3*row+col] = board[col][row]
+			ret[3*row+col] = board[row][col]
 		}
 	}
 	return string(ret[:9])
