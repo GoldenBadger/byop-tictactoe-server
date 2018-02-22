@@ -35,6 +35,7 @@ func (a *App) initGames() {
 
 func (a *App) initRouter() {
 	a.router = chi.NewRouter()
+	a.router.Get("/", a.APIDoc)
 	a.router.Route("/players", func(r chi.Router) {
 		r.Post("/", a.newPlayer)
 	})
@@ -44,6 +45,10 @@ func (a *App) initRouter() {
 		r.Get("/{id}", a.getGameInfo)
 		r.Post("/{id}", a.makeMove)
 	})
+}
+
+func (a *App) APIDoc(w http.ResponseWriter, r *http.Request) {
+	http.Redirect(w, r, "https://raw.githubusercontent.com/GoldenBadger/byop-tictactoe-server/master/API.md", 302)
 }
 
 func (a *App) newPlayer(w http.ResponseWriter, r *http.Request) {

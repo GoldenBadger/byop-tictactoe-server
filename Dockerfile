@@ -3,7 +3,8 @@ RUN go get -u github.com/golang/dep/cmd/dep
 WORKDIR /go/src/github.com/goldenbadger/byop-tictactoe-server
 COPY . .
 RUN dep ensure
-RUN go build .
+RUN go build main.go
+RUN CGO_ENABLED=0 GOOS=linux go build -a -installsuffix cgo -o byop-tictactoe-server main.go
 
 FROM alpine:latest
 WORKDIR /root
